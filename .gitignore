@@ -1,0 +1,8 @@
+OMSUbot/packages
+OMSUbot/bin
+OMSUbot/obj
+OMSUBot/Properties
+*.csproj
+*.sln
+*.config
+.idea
