@@ -45,12 +45,12 @@ namespace OMSUbot
         
         public void SendMessage(User user, string message, Keyboard kb)
         {
-            Curl.Curl2String("https://api.vk.com/method/messages.send?v=5.92&random_id=" + new Random().Next(Int32.MinValue, Int32.MaxValue) + "&access_token=" + Token + "&peer_id=" + user.Id + "&keyboard=" + Json.Encode(kb.GetData()).Replace(",null", "") + "&message=" + message);
+            Curl.Curl2String("https://api.vk.com/method/messages.send?v=5.92&random_id=" + new Random().Next(Int32.MinValue, Int32.MaxValue) + "&access_token=" + Token + "&peer_id=" + user.Id + "&keyboard=" + kb.GetData() + "&message=" + message);
         }
         
         public void SendMessage(Chat chat, string message, Keyboard kb)
         {
-            Curl.Curl2String("https://api.vk.com/method/messages.send?v=5.92&random_id=" + new Random().Next(Int32.MinValue, Int32.MaxValue) + "&access_token=" + Token + "&peer_id=" + chat.Id + "&keyboard=" + Json.Encode(kb.GetData()).Replace(",null", "") + "&message=" + message);
+            Curl.Curl2String("https://api.vk.com/method/messages.send?v=5.92&random_id=" + new Random().Next(Int32.MinValue, Int32.MaxValue) + "&access_token=" + Token + "&peer_id=" + chat.Id + "&keyboard=" + kb.GetData() + "&message=" + message);
         }
 
         public string GetToken()

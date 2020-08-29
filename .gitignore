@@ -3,6 +3,7 @@ OMSUbot/bin
 OMSUbot/obj
 OMSUBot/Properties
 *.csproj
+*.xml
 *.sln
 *.config
 .idea

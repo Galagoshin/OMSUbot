@@ -22,7 +22,7 @@ namespace OMSUbot.Vk.Api
 
         public dynamic GetData()
         {
-            return settings;
+            return Json.Encode(settings).Replace(",null", "");
         }
 
         public Keyboard AddButton(Button button)
