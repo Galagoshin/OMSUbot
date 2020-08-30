@@ -8,11 +8,6 @@ namespace OMSUbot.Commands
 
         public StartCommand() : base("start", new []{"старт"}){}
 
-        public override void Execute(Chat chat, User user, Data data)
-        {
-            
-        }
-        
         public override void Execute(User user, Data data)
         {
             user.RemoveAuth();
@@ -25,6 +20,11 @@ namespace OMSUbot.Commands
                     .AddButton(new Button(KeyboardType.Text, Color.Blue, "3", "course 3", 0, 2))
                     .AddButton(new Button(KeyboardType.Text, Color.Blue, "4", "course 4", 0, 3))
                     .AddButton(new Button(KeyboardType.Text, Color.Blue, "5", "course 5", 0, 4)));
+        }
+        
+        public override void Execute(Chat chat, User user, Data data)
+        {
+            
         }
     }
 }

@@ -24,17 +24,17 @@ namespace OMSUbot.Vk.Api
         
         public void CreateDataAuth()
         {
-            Bot.GetDataBase().Execute("INSERT INTO auth (VkId, Step) VALUES (" + Id + ", 0);");
+            Bot.GetDataBase().Execute("INSERT INTO auth (VkId, Course) VALUES (" + Id + ", 0);");
         }
         
         public int GetAuthCourse()
         {
-            return (int) Bot.GetDataBase().QueryInt("SELECT Step FROM auth WHERE VkId = " + Id);
+            return (int) Bot.GetDataBase().QueryInt("SELECT Course FROM auth WHERE VkId = " + Id);
         }
         
         public void SetAuthCourse(int step)
         {
-            Bot.GetDataBase().Query("UPDATE auth SET Step = " + step + " WHERE VkId = " + Id);
+            Bot.GetDataBase().Query("UPDATE auth SET Course = " + step + " WHERE VkId = " + Id);
         }
         
         public void RemoveAuth()
@@ -49,7 +49,7 @@ namespace OMSUbot.Vk.Api
 
         public bool HaveAuth()
         {
-            return Bot.GetDataBase().Exists("SELECT Step FROM auth WHERE VkId = " + Id);
+            return Bot.GetDataBase().Exists("SELECT Course FROM auth WHERE VkId = " + Id);
         }
 
         public void CreateData(int vkid, int course, int group)

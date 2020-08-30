@@ -12,11 +12,11 @@ namespace OMSUbot.Vk
             Command cmd = null;
             if (!user.HaveAuth())
             {
-                cmd = Bot.GetInstance().GetCommandMap().GetCommand("start", data.Args[0]);
+                cmd = Bot.GetInstance().GetCommandMap().GetCommand("start", data.Args[0].ToLower());
             }
-            else if (Bot.GetInstance().GetCommandMap().ExistsCommand(data.CommandArgs[0], data.Args[0]))
+            else if (Bot.GetInstance().GetCommandMap().ExistsCommand(data.CommandArgs[0], data.Args[0].ToLower()))
             {
-                cmd = Bot.GetInstance().GetCommandMap().GetCommand(data.CommandArgs[0], data.Args[0]);
+                cmd = Bot.GetInstance().GetCommandMap().GetCommand(data.CommandArgs[0], data.Args[0].ToLower());
             }
             else
             {
@@ -28,7 +28,7 @@ namespace OMSUbot.Vk
 
         public static void ChatRespond(Chat chat, User user, Data data)
         {
-            Command cmd = Bot.GetInstance().GetCommandMap().GetCommand(data.CommandArgs[0], data.Args[0]);
+            Command cmd = Bot.GetInstance().GetCommandMap().GetCommand(data.CommandArgs[0], data.Args[0].ToLower());
             cmd.Execute(chat, user, data);
         }
     }
