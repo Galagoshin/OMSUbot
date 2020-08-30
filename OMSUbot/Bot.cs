@@ -40,6 +40,8 @@ namespace OMSUbot
         private void RegisterCommands()
         {
             GetCommandMap().RegisterCommand(new HelpCommand());
+            GetCommandMap().RegisterCommand(new StartCommand());
+            GetCommandMap().RegisterCommand(new CourseCommand());
         }
 
         public void SendMessage(User user, string message)

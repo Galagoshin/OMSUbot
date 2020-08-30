@@ -7,7 +7,7 @@ namespace OMSUbot
 {
     internal class Program
     {
-        public const string Version = "1.0.0-ALPHA1"; 
+        public const string Version = "1.0.0-ALPHA2"; 
         
         public static void Main(string[] args)
         {

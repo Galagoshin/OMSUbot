@@ -86,7 +86,20 @@ namespace OMSUbot.Tools
                 item.Value = newValue;
             }
         }
-        
+
+        public bool Contains(TKey key)
+        {
+            try
+            {
+                Get(key);
+            }
+            catch (ArgumentException)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public TValue Get(TKey key)
         {
             if (key == null)
