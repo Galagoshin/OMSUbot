@@ -12,7 +12,8 @@ namespace OMSUbot
         private static Bot _instance;
 
         private CommandMap _commandMap;
-
+        private static DataBase db;
+        
         public readonly string Token;
 
         public Bot(string token)
@@ -21,6 +22,14 @@ namespace OMSUbot
             _commandMap = new CommandMap();
             RegisterCommands();
             _instance = this;
+            db = new DataBase("db.sqlite3");
+            db.Execute("CREATE TABLE IF NOT EXISTS users (VkId INTEGER NOT NULL, Сourse INTEGER NOT NULL, GroupId INTEGER NOT NULL);");
+            db.Execute("CREATE TABLE IF NOT EXISTS auth (VkId INTEGER NOT NULL, Course INTEGER NOT NULL);");
+        }
+
+        public static DataBase GetDataBase()
+        {
+            return db;
         }
 
         public CommandMap GetCommandMap()

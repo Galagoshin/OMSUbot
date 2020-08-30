@@ -2,8 +2,9 @@ OMSUbot/packages
 OMSUbot/bin
 OMSUbot/obj
 OMSUBot/Properties
+OMSUbot/.DS_Store
+OMSUbot/.idea
 *.csproj
 *.xml
 *.sln
 *.config
-.idea
